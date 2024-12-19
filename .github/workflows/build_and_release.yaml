@@ -85,11 +85,12 @@ jobs:
       - name: Setting Visual Studio build environment variables and paths (Windows)
         if: matrix.os == 'windows-latest'
         uses: seanmiddleditch/gha-setup-vsdevenv@master
-      - name: Run CMake (Windows)
-        if: matrix.os == 'windows-latest'
-        working-directory: aseprite/build
-        shell: cmd
-        run: cmake -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_IGNORE_PATH='C:/ProgramData/chocolatey/bin/;C:/Strawberry/c/bin/' -DLAF_BACKEND=skia -DSKIA_DIR=../../skia -DSKIA_LIBRARY_DIR=../../skia/out/Release-x64 -G Ninja ..
+#      - name: Run CMake (Windows)
+#        if: matrix.os == 'windows-latest'
+#        working-directory: aseprite/build
+#        shell: cmd
+#        run: cmake -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_IGNORE_PATH='C:/ProgramData/chocolatey/bin/;C:/Strawberry/c/bin/' -DLAF_BACKEND=skia -DSKIA_DIR=../../skia -DSKIA_LIBRARY_DIR=../../skia/out/Release-x64 -G Ninja ..
+#    
       - name: Run CMake (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
         working-directory: aseprite/build
